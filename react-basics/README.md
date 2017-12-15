@@ -31,4 +31,7 @@ Tutorial found [here](https://www.youtube.com/watch?v=JPT3bFIwJYA)
   - babel-preset-es2015  - preset for es2015 (es6)
   - babel-preset-react   - preset for react
   - babel-preset-stage-2 - preset for stage2 (extra features)
-- 
+- Create scaffolding
+  - ./src/app/
+- Create index.html in ./src/
+- Create webpack.config.js in ./
