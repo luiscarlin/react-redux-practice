@@ -27,10 +27,10 @@ Tutorial found [here](https://www.youtube.com/watch?v=JPT3bFIwJYA)
 - Install development dependences `npm install --save-dev`
   - webpack              - module bundler (transforming, packagin, etfc)
   - webpack-dev-server   - a dev only server to load webpack bundle (live reloading)
-  - babel-loader         - transpile JS using Babel and Webpack
-  - babel-preset-es2015  - preset for es2015 (es6)
-  - babel-preset-react   - preset for react
-  - babel-preset-stage-2 - preset for stage2 (extra features)
+  - babel-loader         - transpiler core
+  - babel-preset-es2015  - transpile es6 to es5
+  - babel-preset-react   - transpile react to regular js
+  - babel-preset-stage-2 - transpiler extra features
 - Create scaffolding
   - ./src/app/
 - Create index.html in ./src/
