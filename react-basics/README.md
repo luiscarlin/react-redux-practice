@@ -15,7 +15,7 @@ Tutorial found [here](https://www.youtube.com/watch?v=JPT3bFIwJYA)
   - AngularJS controls the complete user experience
   - ReactJS can be used as part of other type of applications (Lavarel, Angular, etc). Angular cannot do that
 
-### Setup
+### Set Up
 
 - Create your project folder
 - Install nodejs
@@ -27,11 +27,34 @@ Tutorial found [here](https://www.youtube.com/watch?v=JPT3bFIwJYA)
 - Install development dependences `npm install --save-dev`
   - webpack              - module bundler (transforming, packagin, etfc)
   - webpack-dev-server   - a dev only server to load webpack bundle (live reloading)
-  - babel-loader         - transpiler core
+  - babel-core           - transpiler library
+  - babel-loader         - transpiler loader
   - babel-preset-es2015  - transpile es6 to es5
   - babel-preset-react   - transpile react to regular js
   - babel-preset-stage-2 - transpiler extra features
-- Create scaffolding
-  - ./src/app/
-- Create index.html in ./src/
+- Create ./src/app/ for reactjs app
+- Create root file index.html in ./src/
 - Create webpack.config.js in ./
+- Create ./src/app/index.js with script tag to bring bundle.js file
+- Add npm scripts to transpile and run webpack dev server in package.json:
+```
+  "scripts": {
+    // build dev mode and start dev server
+    "start": "npm run build",
+
+    // Generate development build. webpack will find automatically webpack.config.js
+    // run webpack in development mode (-d)
+    // transpile and load everything
+    // copy index.html (could be done with webapck too) to DIST_DIR
+    // start webpack dev server to serve site in development server
+    // tell webpack-dev-server where the did the code come from
+    // inline -> show output messages inline
+    // hot -> live (hot) reloading
+    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
+
+    // Generate production build
+    // transpiles code, removes sourcemaps, bundle, and minify
+    // still need to copy index.html to DIST_DIR
+    "build:prod": "webpack -p && cp src/index.html dist/index.html"
+  },
+```
