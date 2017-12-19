@@ -14,6 +14,7 @@ Tutorial found [here](https://www.youtube.com/watch?v=JPT3bFIwJYA)
   - AngularJS is used to build SPA (UIs, form validation, routing, etc) with all features loaded by default
   - AngularJS controls the complete user experience
   - ReactJS can be used as part of other type of applications (Lavarel, Angular, etc). Angular cannot do that
+- You tell React where to render components in your view
 
 ### Set Up
 
@@ -58,3 +59,6 @@ Tutorial found [here](https://www.youtube.com/watch?v=JPT3bFIwJYA)
     "build:prod": "webpack -p && cp src/index.html dist/index.html"
   },
 ```
+- Create your first component
+- Add a hook to your component in html with `<div id="app"></div>`
+- Done.
