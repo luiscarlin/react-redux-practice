@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 // you can put a one-line JS statement in {}
 // you can have code before return
 
+// this.props.children will render anything passed in the body of the component <Comp>body</Comp>
 export class Home extends React.Component {
     render() {
         return (
@@ -16,6 +17,7 @@ export class Home extends React.Component {
                         {this.props.user.hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}
                     </ul>
                 </div>
+                {this.props.children}
             </div>
         )
     }
@@ -29,5 +31,6 @@ export class Home extends React.Component {
 Home.propTypes = {
     name: PropTypes.string,
     age: PropTypes.number,
-    user: PropTypes.object
+    user: PropTypes.object,
+    children: PropTypes.element.isRequired
 }
