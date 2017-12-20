@@ -10,6 +10,12 @@ import { Home } from "./components/Home"
 class App extends React.Component {
     // called by react to render a component when needed
     render() {
+        let user = {
+            "address": "123 Main st",
+            "dob": "11/11/2000",
+            "gender": "male",
+            "hobbies": ["soccer", "guitar", "programming"]
+        }
         // return html. This is just for convenience.
         // React will use JS to implement the html.
         // can only return one root element (in this case a <div>)
@@ -22,7 +28,7 @@ class App extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home/>
+                        <Home name={"Luis"} age={33} user={user}/>
                     </div>
                 </div>
             </div>
