@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
 // you can put a one-line JS statement in {}
 // you can have code before return
@@ -18,4 +19,15 @@ export class Home extends React.Component {
             </div>
         )
     }
+}
+
+// specify the types of props
+// outside of the class
+// specify all your props
+// It's good practice
+// This is optional
+Home.propTypes = {
+    name: PropTypes.string,
+    age: PropTypes.number,
+    user: PropTypes.object
 }
