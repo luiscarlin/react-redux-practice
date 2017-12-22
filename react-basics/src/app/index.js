@@ -8,6 +8,10 @@ import { Home } from "./components/Home"
 
 
 class App extends React.Component {
+    callFromChild() {
+        alert("Hello, traveller")
+    }
+
     // called by react to render a component when needed
     render() {
         let user = {
@@ -23,12 +27,12 @@ class App extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Header/>
+                        <Header homeLink="Home"/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home name={"Luis"} initialAge={33} user={user}>
+                        <Home name={"Luis"} initialAge={33} user={user} call={this.callFromChild}>
                             <p>This is the body</p>
                         </Home>
                     </div>
