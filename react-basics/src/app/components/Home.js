@@ -44,6 +44,8 @@ export class Home extends React.Component {
                 <button onClick={() => this.onMakeOlder()} className='btn btn-primary'>Make me older</button>
                 <hr/>
                 <button onClick={() => this.props.call()} className='btn btn-primary'>Greet</button>
+                <hr/>
+                <button onClick={() => this.props.homeLinkUpdate("Home Updated")} className='btn btn-primary'>Change home link</button>
             </div>
         )
     }

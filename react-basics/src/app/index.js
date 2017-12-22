@@ -8,8 +8,21 @@ import { Home } from "./components/Home"
 
 
 class App extends React.Component {
+    constructor()  {
+        super()
+        this.state = {
+            homeLink: "Home"
+        }
+    }
+
     callFromChild() {
         alert("Hello, traveller")
+    }
+
+    changeHomeLink(linkName) {
+        this.setState({
+            homeLink: linkName
+        })
     }
 
     // called by react to render a component when needed
@@ -27,12 +40,17 @@ class App extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Header homeLink="Home"/>
+                        <Header homeLink={this.state.homeLink}/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home name={"Luis"} initialAge={33} user={user} call={this.callFromChild}>
+                        <Home
+                            name={"Luis"}
+                            initialAge={33}
+                            user={user}
+                            homeLinkUpdate={this.changeHomeLink.bind(this)}
+                            call={this.callFromChild}>
                             <p>This is the body</p>
                         </Home>
                     </div>
