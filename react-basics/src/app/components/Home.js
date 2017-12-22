@@ -8,12 +8,20 @@ import PropTypes from 'prop-types'
 export class Home extends React.Component {
     constructor(props) {
         super()
-        this.age = props.age
+        // use props only as inital values
+        // state is the component's internal state
+        // a change in the state means a redendering of the DOM
+        this.state = {
+            age: props.initialAge,
+            status: "Active"
+        }
     }
 
     onMakeOlder() {
-        this.age += 1
-        console.log(this.age)
+        // noly the state values that you specify are modified
+        this.setState({
+            age: this.state.age + 1
+        })
     }
 
     // when calling functions from html
@@ -23,8 +31,9 @@ export class Home extends React.Component {
     render() {
         return (
             <div>
-                <p>Hello, {this.props.name}. Your age is {this.age}.</p>
+                <p>Hello, {this.props.name}. Your age is {this.state.age}.</p>
                 <p>Your address is {this.props.user.address}</p>
+                <p>Status: {this.state.status}</p>
                 <div>
                     <h4>Hobbies</h4>
                     <ul>
@@ -45,7 +54,7 @@ export class Home extends React.Component {
 // This is optional
 Home.propTypes = {
     name: PropTypes.string,
-    age: PropTypes.number,
+    initialAge: PropTypes.number,
     user: PropTypes.object,
     children: PropTypes.element.isRequired
 }
