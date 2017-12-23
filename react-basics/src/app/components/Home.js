@@ -13,7 +13,8 @@ export class Home extends React.Component {
         // a change in the state means a redendering of the DOM
         this.state = {
             age: props.initialAge,
-            status: "Active"
+            status: "Active",
+            homeLink: props.homeLink
         }
     }
 
@@ -21,6 +22,12 @@ export class Home extends React.Component {
         // noly the state values that you specify are modified
         this.setState({
             age: this.state.age + 1
+        })
+    }
+
+    onChangeHomeLink(event) {
+        this.setState({
+            homeLink: event.target.value
         })
     }
 
@@ -45,7 +52,8 @@ export class Home extends React.Component {
                 <hr/>
                 <button onClick={() => this.props.call()} className='btn btn-primary'>Greet</button>
                 <hr/>
-                <button onClick={() => this.props.homeLinkUpdate("Home Updated")} className='btn btn-primary'>Change home link</button>
+                <input type="text" value={this.state.homeLink} onChange={(event) => this.onChangeHomeLink(event)}/>
+                <button onClick={() => this.props.homeLinkUpdate(this.state.homeLink)} className='btn btn-primary'>Change home link</button>
             </div>
         )
     }

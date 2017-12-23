@@ -50,6 +50,7 @@ class App extends React.Component {
                             initialAge={33}
                             user={user}
                             homeLinkUpdate={this.changeHomeLink.bind(this)}
+                            homeLink={this.state.homeLink}
                             call={this.callFromChild}>
                             <p>This is the body</p>
                         </Home>
