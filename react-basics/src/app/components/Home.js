@@ -16,6 +16,43 @@ export class Home extends React.Component {
             status: "Active",
             homeLink: props.homeLink
         }
+        console.log("constructor")
+    }
+
+    componentWillMount() {
+        console.log("component will mount")
+    }
+
+    componentDidMount() {
+        console.log("component did mount")
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log("component will receive props")
+        console.log("nextProps=", nextProps)
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("should component update")
+        console.log("nextProps=", nextProps)
+        console.log("nextState=", nextState)
+        return true
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log("component will update")
+        console.log("nextProps=", nextProps)
+        console.log("nextState=", nextState)
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log("component did update")
+        console.log("nextProps=", prevProps)
+        console.log("nextState=", prevState)
+    }
+
+    componentWillUnmount() {
+        console.log("component will unmount")
     }
 
     onMakeOlder() {
@@ -36,6 +73,7 @@ export class Home extends React.Component {
     // 2. Or use es6 => onClick={() => this.onMakeOlder()}
     // 3. If you want to update the UI, use state
     render() {
+        console.log("rendering")
         return (
             <div>
                 <p>Hello, {this.props.name}. Your age is {this.state.age}.</p>
