@@ -5,3 +5,4 @@
 - No more page reloads because the client updates the view dynamically
 - Routing handles what page will be shown to the user
 - The URL can remain static or could change to provide the perception of navigability
+- To start, do `npm install --save reat-router`
