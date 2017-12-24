@@ -4,7 +4,8 @@ export class User extends React.Component {
     render() {
         return (
             <div>
-                <h3>User</h3>
+                <h3>User Page</h3>
+                <p>User id: </p>
             </div>
         );
     }
