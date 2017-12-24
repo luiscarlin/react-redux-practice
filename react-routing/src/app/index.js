@@ -14,13 +14,15 @@ import { User } from "./components/User";
 // you also need to configure webpack-dev-server to handle this style of urls
 // root accepts other components as children (this.props.children) and will display them
 // IndexRoute will load the page /home on / as default route
+
+// :id means it will route if you pass an id
 class App extends React.Component {
     render() {
         return (
             <Router history={browserHistory}>
                 <Route path={"/"} component={Root} >
                     <IndexRoute component={Home} />
-                    <Route path={"user"} component={User} />
+                    <Route path={"user/:id"} component={User} />
                     <Route path={"home"} component={Home} />
                 </Route>
             </Router>
