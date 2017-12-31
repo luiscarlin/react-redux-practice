@@ -1,5 +1,8 @@
-import User from "./User.jsx"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { User } from "./User.jsx"
 
-it("should pass in User", () => {
-    console.log("In the test")
-})
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<User />, div);
+});
