@@ -1,11 +1,12 @@
 import React from "react"
 
-export default  class Home extends React.Component {
+export default class Root extends React.Component {
     render() {
         return (
             <div>
-                <h3>Home</h3>
+                {this.props.children}
             </div>
+
         );
     }
 }
