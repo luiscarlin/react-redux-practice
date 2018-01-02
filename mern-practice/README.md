@@ -18,4 +18,12 @@
 
 - What:
   - Fast, unopinionated, minimalist web framework for Node.js
-  -
+  - You can add plugins to it
+
+#### MongoDB
+
+- long term storage
+- non-relational db
+- giant text file
+- JSON
+- very fast
