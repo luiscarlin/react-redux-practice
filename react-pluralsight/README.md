@@ -1,4 +1,4 @@
-## React Advanced: Building a full-stack app with React and Express
+## React Advanced: Building an isomorphic full-stack app with React and Express
 
 ### Introduction
 
@@ -18,4 +18,4 @@
 
 - What:
   - Fast, unopinionated, minimalist web framework for Node.js
-  - 
+  -
