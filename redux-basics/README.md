@@ -15,6 +15,5 @@
 
 ### Get Started
 
-
 - install -> `npm install --save redux`
-- create store
+- create store in `./src/app/index.js`
