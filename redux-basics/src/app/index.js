@@ -13,6 +13,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     // find which action to perform
     // convention to use UPPERCASE action types
+    // we need to make sure that the state is immutable (different memory locations)
     switch (action.type) {
         case "ADD":
             // make a shallow copy off the top level (note this is NOT a deep copy)
