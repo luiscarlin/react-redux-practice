@@ -1,6 +1,8 @@
 import {render} from "react-dom";
 import React from "react";
 import {createStore, combineReducers, applyMiddleware} from "redux";
+// nice logger that prints current state, action, and next state before the reducer is run
+import reduxLogger from "redux-logger";
 
 // reducer takes action and changes state
 // in es6, you can have default params
@@ -72,7 +74,7 @@ const middlewareLogger = (store) => (next) => (action) => {
 const store = createStore(
     combineReducers({mathReducer, userReducer}),
     {},
-    applyMiddleware(middlewareLogger)
+    applyMiddleware(middlewareLogger, reduxLogger())
 )
 
 // fire this callback when the store is updated
