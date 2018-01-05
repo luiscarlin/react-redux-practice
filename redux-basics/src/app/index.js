@@ -1,6 +1,6 @@
 import {render} from "react-dom";
 import React from "react";
-import {createStore, combineReducers} from "redux";
+import {createStore, combineReducers, applyMiddleware} from "redux";
 
 // reducer takes action and changes state
 // in es6, you can have default params
@@ -58,11 +58,22 @@ const userReducer = (
     return state;
 };
 
+// this middleware gets executed before the reducer is called with the action
+// we need to make sure you call the action next
+const middlewareLogger = (store) => (next) => (action) => {
+    console.log("Redux middleware (before reducer):", action)
+    next(action)
+}
+
 // pass: reducer and initial app state (can be any type. object, int, arrays)
 // if you provide a default for intial state in the reducer, you don't need to pass it
 // use combineReducers when using more than one reducer
 // in es6 => {hello: hello} = {hello}
-const store = createStore(combineReducers({mathReducer, userReducer}));
+const store = createStore(
+    combineReducers({mathReducer, userReducer}),
+    {},
+    applyMiddleware(middlewareLogger)
+)
 
 // fire this callback when the store is updated
 // for testing purposes (since we're not using react atm)
