@@ -50,4 +50,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 // connects reactjs with redux
+// exports that hooked up component ready to be rendered
 export default connect(mapStateToProps, mapDispatchToProps)(App);
