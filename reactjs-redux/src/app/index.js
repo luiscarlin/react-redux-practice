@@ -1,6 +1,7 @@
 import {render} from "react-dom";
 import React from "react";
 import {createStore, combineReducers, applyMiddleware} from "redux";
+
 // nice logger that prints current state, action, and next state before the reducer is run
 import reduxLogger from "redux-logger";
 import {Provider} from "react-redux";

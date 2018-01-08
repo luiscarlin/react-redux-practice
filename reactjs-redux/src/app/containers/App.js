@@ -4,8 +4,8 @@ import React from "react";
 import {connect} from "react-redux";
 
 // dumb (presentation) components
-import { User } from '../presentation/User';
-import { Main } from '../presentation/Main';
+import { User } from '../presenters/User';
+import { Main } from '../presenters/Main';
 
 class App extends React.Component {
     render() {
