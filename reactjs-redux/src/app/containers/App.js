@@ -1,10 +1,11 @@
 import React from "react";
 
-// Allows you to render a react component by mapping redux store state + dispatchers 
+// Allows you to render a react component by mapping redux store state + dispatchers to components 
 import {connect} from "react-redux";
 
-import { User } from './User';
-import { Main } from './Main';
+// dumb (presentation) components
+import { User } from '../presentation/User';
+import { Main } from '../presentation/Main';
 
 class App extends React.Component {
     render() {
@@ -17,6 +18,7 @@ class App extends React.Component {
     }
 }
 
+// state coming from 
 const mapStateToProps = (state) => {
   return {
       user: state.user,

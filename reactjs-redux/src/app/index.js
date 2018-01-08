@@ -3,6 +3,9 @@ import React from "react";
 import {createStore, combineReducers, applyMiddleware} from "redux";
 // nice logger that prints current state, action, and next state before the reducer is run
 import reduxLogger from "redux-logger";
+import {Provider} from "react-redux";
+
+import App from './containers/App';
 
 // reducer takes action and changes state
 // in es6, you can have default params
@@ -72,16 +75,16 @@ const middlewareLogger = (store) => (next) => (action) => {
 // use combineReducers when using more than one reducer
 // in es6 => {hello: hello} = {hello}
 const store = createStore(
-    combineReducers({mathReducer, userReducer}),
+    combineReducers({math: mathReducer, user: userReducer}),
     {},
-    applyMiddleware(middlewareLogger, reduxLogger())
+    applyMiddleware(reduxLogger())
 )
 
 // fire this callback when the store is updated
 // for testing purposes (since we're not using react atm)
 // store.getState() returns a global state (each reducer has a different state)
 store.subscribe(() => {
-    console.log("Store updated!", store.getState());
+   /// console.log("Store updated!", store.getState());
 });
 
 // in this case, dispatch the action to the store, it knows to call the reducer
@@ -108,3 +111,9 @@ store.dispatch({
     type: "SET_NAME",
     payload: "luis"
 })
+
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    window.document.getElementById('app'));
