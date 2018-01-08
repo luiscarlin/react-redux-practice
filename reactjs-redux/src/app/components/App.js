@@ -1,4 +1,6 @@
 import React from "react";
+
+// Allows you to render a react component by mapping redux store state + dispatchers 
 import {connect} from "react-redux";
 
 import { User } from './User';
