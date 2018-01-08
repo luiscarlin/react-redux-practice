@@ -1,6 +1,6 @@
 import React from "react";
 
-// Allows you to render a react component by mapping redux store state + dispatchers to components 
+// connects a react component with redux. The result will be ready to be rendered.
 import {connect} from "react-redux";
 
 // dumb (presentation) components
@@ -8,6 +8,7 @@ import { User } from '../presenters/User';
 import { Main } from '../presenters/Main';
 
 // no need to export this class. We oinly need to export the connect()
+// this is the container. It is connected directly to Redux and passes props to dumb controllers.
 class App extends React.Component {
     constructor() {
         super()
@@ -50,5 +51,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 // connects reactjs with redux
-// exports that hooked up component ready to be rendered
+// exports that hooked up (wired up) component ready to be rendered
 export default connect(mapStateToProps, mapDispatchToProps)(App);
