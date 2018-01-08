@@ -7,7 +7,12 @@ import {connect} from "react-redux";
 import { User } from '../presenters/User';
 import { Main } from '../presenters/Main';
 
+// no need to export this class. We oinly need to export the connect()
 class App extends React.Component {
+    constructor() {
+        super()
+    }
+
     render() {
         return (
             <div className="container">
@@ -18,14 +23,21 @@ class App extends React.Component {
     }
 }
 
-// state coming from 
+// define which properties and actions you can use in your dumb components
+
+// select which props from the global app state to map to the props of this component
+// state is passed from redux
+// note that props can also be functions. They are accessed through this.props
+// state.userReducer.name will access the name props from the state used in the reducer
 const mapStateToProps = (state) => {
   return {
-      user: state.user,
-      math: state.math
+      user: state.userReducer,
+      math: state.mathReducer
   };
 };
 
+// specify what actions can be done in the dumb components
+// the actions that are dispatch are then received by the reducers
 const mapDispatchToProps = (dispatch) => {
     return {
         setName: (name) => {
@@ -37,4 +49,5 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
+// connects reactjs with redux
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -4,8 +4,11 @@ import {createStore, combineReducers, applyMiddleware} from "redux";
 
 // nice logger that prints current state, action, and next state before the reducer is run
 import reduxLogger from "redux-logger";
+
+// bridge between react and redux
 import {Provider} from "react-redux";
 
+// main component - container for dumb presenteres
 import App from './containers/App';
 
 // reducer takes action and changes state
@@ -40,6 +43,7 @@ const mathReducer = (state = {
     return state;
 };
 
+// userReducer.name will access the name prop from the current state always
 const userReducer = (
   state = {
     name: "Max",
@@ -76,7 +80,7 @@ const middlewareLogger = (store) => (next) => (action) => {
 // use combineReducers when using more than one reducer
 // in es6 => {hello: hello} = {hello}
 const store = createStore(
-    combineReducers({math: mathReducer, user: userReducer}),
+    combineReducers({mathReducer, userReducer}),
     {},
     applyMiddleware(reduxLogger())
 )
@@ -117,4 +121,5 @@ render(
     <Provider store={store}>
         <App />
     </Provider>,
-    window.document.getElementById('app'));
+    window.document.getElementById('app')
+);
