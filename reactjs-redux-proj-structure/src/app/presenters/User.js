@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export const User = (props) => {
     return (
@@ -14,5 +14,5 @@ export const User = (props) => {
                 </div>
             </div>
         </div>
-    );
+    )
 }

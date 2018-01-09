@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export const Main = (props) => {
     return (
@@ -16,5 +16,5 @@ export const Main = (props) => {
                 </div>
             </div>
         </div>
-    );
+    )
 }
