@@ -1,7 +1,13 @@
 export function setName(name) {
+    let namePromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(name)
+        }, 2000)
+    })
+
     return {
         type: "SET_NAME",
-        payload: name
+        payload: namePromise
     }
 }
 
