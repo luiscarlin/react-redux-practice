@@ -5,12 +5,14 @@ const userReducer = (
   },
   action) => {
     switch (action.type) {
+        // with promises, you need to create the fulfilled case for the action
         case "SET_NAME_FULFILLED":
             state = {
                 ...state,
                 name: action.payload
             }
             break;
+        // with thunk, you don't need to create a fulfilled case for the action
         case "SET_AGE":
             state = {
                 ...state,

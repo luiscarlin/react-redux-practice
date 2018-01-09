@@ -12,6 +12,7 @@ export function setName(name) {
 }
 
 export function setAge(age) {
+    // dispatch is passed from redux
     return dispatch => {
         setTimeout(() => {
             dispatch({
