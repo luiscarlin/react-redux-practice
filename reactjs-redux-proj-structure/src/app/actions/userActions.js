@@ -12,8 +12,12 @@ export function setName(name) {
 }
 
 export function setAge(age) {
-    return {
-        type: "SET_AGE",
-        payload: age
+    return dispatch => {
+        setTimeout(() => {
+            dispatch({
+                type: "SET_AGE",
+                payload: age
+            })
+        }, 2000)
     }
 }
